@@ -23,6 +23,11 @@ jobs:
       - name: Criar arquivo .pem
         run: echo "${{ secrets.EC2_KEY }}" > ec2-key.pem && chmod 600 ec2-key.pem
 
+      - name: Adicionar chave do host EC2 aos known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.EC2_IP }} >> ~/.ssh/known_hosts
+
       - name: Deploy da aplicação selecionada
         env:
           EC2_USER: ${{ secrets.EC2_USER }}
@@ -30,7 +35,6 @@ jobs:
         run: |
           echo "Fazendo deploy da aplicação: ${{ github.event.inputs.app }}"
 
-          # Aqui você pode customizar a lógica para cada app
           if [ "${{ github.event.inputs.app }}" = "frontend" ]; then
             bash scripts/deploy-frontend.sh ec2-key.pem
           elif [ "${{ github.event.inputs.app }}" = "backend" ]; then
