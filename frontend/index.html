@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Digital - Sua Solução Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#F97316',
+                        tertiary: '#8B5CF6',
+                        dark: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-dark to-black text-white">
+    <!-- Hero Section -->
+    <header class="container mx-auto px-4 py-6">
+        <nav class="relative flex justify-between items-center mb-20">
+            <div class="text-2xl font-bold text-primary">Saas Digital</div>
+            
+            <!-- Menu Mobile Button -->
+            <button id="menuButton" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-primary">Recursos</a>
+                <a href="#pricing" class="hover:text-primary">Preços</a>
+                <a href="#contact" class="hover:text-primary">Contato</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden absolute top-full right-0 left-0 bg-dark/95 backdrop-blur-sm mt-2 p-4 rounded-lg md:hidden">
+                <div class="flex flex-col space-y-4">
+                    <a href="#features" class="hover:text-primary">Recursos</a>
+                    <a href="#pricing" class="hover:text-primary">Preços</a>
+                    <a href="#contact" class="hover:text-primary">Contato</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Transforme seu Negócio Digital</h1>
+            <p class="text-xl text-gray-400 mb-10">Soluções inteligentes para automatizar e escalar seu negócio</p>
+            <button class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold">
+                Comece Agora
+            </button>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Preços Simples e Transparentes</h2>
+            <p class="text-gray-400">Escolha o plano ideal para você e comece seu período de teste de 14 dias.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Plano Inicial -->
+            <div class="bg-dark/50 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Plano Inicial</h3>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$29</span>
+                    <span class="text-gray-400">/mês</span>
+                </div>
+                <p class="text-gray-400 mb-6">Para freelancers e fundadores solo que precisam do essencial.</p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Até 10 faturas por mês
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        2 contas conectadas
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Visão financeira geral
+                    </li>
+                </ul>
+                <button class="w-full bg-primary hover:bg-blue-600 text-white py-3 rounded-lg font-semibold">
+                    Selecionar Plano
+                </button>
+            </div>
+
+            <!-- Plano Profissional -->
+            <div class="bg-dark/50 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Plano Profissional</h3>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$69</span>
+                    <span class="text-gray-400">/mês</span>
+                </div>
+                <p class="text-gray-400 mb-6">Para times em crescimento que precisam de mais flexibilidade.</p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Até 50 faturas por mês
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Gestão de clientes
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Exportação CSV & relatórios
+                    </li>
+                </ul>
+                <button class="w-full bg-secondary hover:bg-orange-600 text-white py-3 rounded-lg font-semibold">
+                    Selecionar Plano
+                </button>
+            </div>
+
+            <!-- Plano Enterprise -->
+            <div class="bg-dark/50 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-tertiary rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Plano Enterprise</h3>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$99</span>
+                    <span class="text-gray-400">/mês</span>
+                </div>
+                <p class="text-gray-400 mb-6">Para empresas maiores que precisam de máxima flexibilidade.</p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Faturas ilimitadas
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Gestão de conta pessoal
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Relatórios completos
+                    </li>
+                </ul>
+                <button class="w-full bg-tertiary hover:bg-purple-600 text-white py-3 rounded-lg font-semibold">
+                    Selecionar Plano
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-8 border-t border-gray-800">
+        <div class="text-center text-gray-400">
+            © 2024 SaasDigital. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile Toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (const link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
