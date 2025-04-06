@@ -1,0 +1,9 @@
+services:
+  api:
+    image: ${DOCKERHUB_USERNAME}/web-server-frontend:latest
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production

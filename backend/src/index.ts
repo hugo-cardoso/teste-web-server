@@ -4,6 +4,7 @@ import cors from '@fastify/cors'
 interface SubscriptionPlan {
   id: number
   name: string
+  description: string
   price: number
   features: string[]
 }
@@ -21,21 +22,36 @@ await fastify.register(cors, {
 const subscriptionPlans: SubscriptionPlan[] = [
   {
     id: 1,
-    name: 'Básico',
-    price: 29.90,
-    features: ['Acesso básico', 'Suporte por email']
+    name: 'Plano Inicial',
+    description: 'Para freelancers e fundadores solo que precisam do essencial.',
+    price: 29,
+    features: [
+      'Até 10 faturas por mês',
+      '2 contas conectadas',
+      'Visão financeira geral'
+    ]
   },
   {
     id: 2,
-    name: 'Pro',
-    price: 59.90,
-    features: ['Acesso completo', 'Suporte prioritário', 'Recursos avançados']
+    name: 'Plano Profissional',
+    description: 'Para times em crescimento que precisam de mais flexibilidade.',
+    price: 69,
+    features: [
+      'Até 50 faturas por mês',
+      'Gestão de clientes',
+      'Exportação CSV & relatórios'
+    ]
   },
   {
     id: 3,
-    name: 'Enterprise',
-    price: 99.90,
-    features: ['Acesso VIP', 'Suporte 24/7', 'Recursos personalizados', 'API dedicada']
+    name: 'Plano Enterprise',
+    description: 'Para empresas maiores que precisam de máxima flexibilidade.',
+    price: 99,
+    features: [
+      'Faturas ilimitadas',
+      'Gestão de conta pessoal',
+      'Relatórios completos'
+    ]
   }
 ]
 
