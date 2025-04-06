@@ -11,6 +11,7 @@ on:
         options:
           - frontend
           - backend
+          - tools-netdata
 
 jobs:
   deploy:
@@ -39,4 +40,6 @@ jobs:
             bash scripts/deploy-frontend.sh ec2-key.pem
           elif [ "${{ github.event.inputs.app }}" = "backend" ]; then
             bash scripts/deploy-backend.sh ec2-key.pem
+          elif [ "${{ github.event.inputs.app }}" = "tools-netdata" ]; then
+            bash scripts/deploy-tools-netdata.sh ec2-key.pem
           fi
