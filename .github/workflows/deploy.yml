@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'Aplicação a ser feita o deploy'
+        required: true
+        default: 'frontend'
+        type: choice
+        options:
+          - frontend
+          - backend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Criar arquivo .pem
+        run: echo "${{ secrets.EC2_KEY }}" > ec2-key.pem && chmod 600 ec2-key.pem
+
+      - name: Deploy da aplicação selecionada
+        env:
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_IP: ${{ secrets.EC2_IP }}
+        run: |
+          echo "Fazendo deploy da aplicação: ${{ github.event.inputs.app }}"
+
+          # Aqui você pode customizar a lógica para cada app
+          if [ "${{ github.event.inputs.app }}" = "frontend" ]; then
+            bash scripts/deploy-frontend.sh ec2-key.pem
+          elif [ "${{ github.event.inputs.app }}" = "backend" ]; then
+            bash scripts/deploy-backend.sh ec2-key.pem
+          fi
