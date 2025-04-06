@@ -1,5 +1,12 @@
-import Fastify from 'fastify'
+import Fastify, { FastifyRequest, FastifyReply } from 'fastify'
 import cors from '@fastify/cors'
+
+interface SubscriptionPlan {
+  id: number
+  name: string
+  price: number
+  features: string[]
+}
 
 const fastify = Fastify({
   logger: true
@@ -11,7 +18,7 @@ await fastify.register(cors, {
 })
 
 // Mock de dados dos planos
-const subscriptionPlans = [
+const subscriptionPlans: SubscriptionPlan[] = [
   {
     id: 1,
     name: 'Básico',
@@ -33,12 +40,12 @@ const subscriptionPlans = [
 ]
 
 // Rota para obter planos de assinatura
-fastify.get('/subscription-plans', async (request, reply) => {
+fastify.get('/subscription-plans', async (request: FastifyRequest, reply: FastifyReply) => {
   return subscriptionPlans
 })
 
 // Rota de healthcheck
-fastify.get('/health', async (request, reply) => {
+fastify.get('/health', async (request: FastifyRequest, reply: FastifyReply) => {
   return { status: 'ok' }
 })
 
