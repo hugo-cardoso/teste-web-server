@@ -15,8 +15,12 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /etc/os-release:/host/etc/os-release:ro
+      - ./netdata.conf:/etc/netdata/netdata.conf:ro
     environment:
       - DO_NOT_TRACK=1
+      - DISABLE_CLOUD=1
+      - NETDATA_CLAIM_URL=
+      - NETDATA_DISABLE_CLOUD=1
 
 volumes:
   netdata_data:
