@@ -1,5 +1,6 @@
 import Plans from "./_components/Plans";
 import ContactForm from "./_components/ContactForm";
+import FAQ from "./_components/FAQ";
 
 export default function Home() {
   return (
@@ -23,6 +24,17 @@ export default function Home() {
         </div>
 
         <Plans />
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="pt-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-white">Perguntas Frequentes</h2>
+            <p className="text-gray-400">Encontre respostas para as dúvidas mais comuns sobre nossos serviços</p>
+          </div>
+          <FAQ />
+        </div>
       </section>
 
       {/* Contact Section */}
