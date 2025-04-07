@@ -55,6 +55,7 @@ export default function ContactForm() {
       setFormData({ name: '', email: '', message: '' });
       
     } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
       setStatus({
         type: 'error',
         message: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.'
