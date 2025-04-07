@@ -1,6 +1,6 @@
 services:
   api:
-    build: .
+    image: ${DOCKERHUB_USERNAME}/web-server-backend:latest
     container_name: backend-api
     restart: unless-stopped
     ports:
