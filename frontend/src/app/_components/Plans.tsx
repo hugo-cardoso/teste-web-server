@@ -7,7 +7,7 @@ type Plan = {
 }
 
 export default async function Plans() {
-  const data = await fetch(`${process.env.API_URL}/subscription-plans`);
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/subscription-plans`);
   const plans: Plan[] = await data.json();
 
   return (

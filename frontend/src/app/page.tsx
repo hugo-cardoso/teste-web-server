@@ -1,4 +1,5 @@
 import Plans from "./_components/Plans";
+import ContactForm from "./_components/ContactForm";
 
 export default function Home() {
   return (
@@ -15,13 +16,25 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="container mx-auto px-4 py-24">
+      <section id="pricing" className="container mx-auto px-4 pt-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Preços Simples e Transparentes</h2>
           <p className="text-gray-400">Escolha o plano ideal para você e comece seu período de teste de 14 dias.</p>
         </div>
 
         <Plans />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="container mx-auto px-4 py-24">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
+            <p className="text-gray-400">Tire suas dúvidas e descubra como podemos ajudar seu negócio</p>
+          </div>
+
+          <ContactForm />
+        </div>
       </section>
     </>
   );

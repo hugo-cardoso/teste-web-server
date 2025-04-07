@@ -9,6 +9,12 @@ interface SubscriptionPlan {
   features: string[]
 }
 
+interface ContactMessage {
+  name: string
+  email: string
+  message: string
+}
+
 const fastify = Fastify({
   logger: true
 })
@@ -58,6 +64,20 @@ const subscriptionPlans: SubscriptionPlan[] = [
 // Rota para obter planos de assinatura
 fastify.get('/subscription-plans', async (request: FastifyRequest, reply: FastifyReply) => {
   return subscriptionPlans
+})
+
+// Rota para enviar mensagem de contato
+fastify.post('/contact', async (request: FastifyRequest<{
+  Body: ContactMessage
+}>, reply: FastifyReply) => {
+  const { name, email, message } = request.body
+  
+  fastify.log.info(`Nova mensagem de contato recebida de ${name} (${email})`)
+  
+  return {
+    success: true,
+    message: 'Mensagem recebida com sucesso'
+  }
 })
 
 // Rota de healthcheck
